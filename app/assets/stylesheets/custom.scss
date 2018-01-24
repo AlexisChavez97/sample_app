@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  background-color: rgba(221, 220, 212, 0.966);
 }
 
 section {
@@ -18,7 +19,7 @@ textarea {
 .center {
   text-align: center;
  h1 {
-  margin-bottom: 10px;
+  margin-bottom: 70px;
   }
 }
 
@@ -46,6 +47,14 @@ h2 {
   color: $light-gray;
 }
 
+h3 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -60,16 +69,17 @@ p {
   }
 }
 /* header */
+.navbar-inverse .navbar-nav > li > a {
+  color: rgb(221, 220, 212);
+}
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  color: rgb(221, 220, 212);
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
   &:hover {
     color: #fff;
     text-decoration: none;
@@ -85,7 +95,7 @@ footer {
   border-top: 1px solid #eaeaea;
   color: $light-gray;
   a {
-    color:#555;
+    color:rgb(255, 255, 255);
     &:hover {
       color: #222;
     }
@@ -104,9 +114,13 @@ footer {
 }
 
 /* image */
- img {
-   height: 150px;
-   width: 160px;
+ .home-img img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10%;
+   height: 200px;
+   width: 300px;
  }
 
  /* mixins, variables, etc. */
@@ -158,8 +172,10 @@ footer {
  }
 
  .gravatar {
+   border-radius: 50%;
    float: left;
    margin-right: 10px;
+   height: 150px;
  }
 
  .gravatar_edit {
