@@ -191,6 +191,10 @@ footer {
    margin-top: 15px;
  }
 
+ .gravatar_edit {
+  margin-top: 15px;
+}
+
  /* forms */
 
  .checkbox {
@@ -231,4 +235,68 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+/* Users index */
+
+a {
+  color: rgb(17, 63, 180);
+  font-size: 15px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: rgb(17, 63, 180);
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.pagination > .disabled > a:hover {
+  background-color: rgb(221, 220, 212);
+  color: #222;
+  border-color: #222;
+}
+
+.pagination > .disabled > a {
+  background-color: #222;
+  color: rgb(221, 220, 212);
+  border-color: #222;
+}
+
+.pagination > li > a {
+  background-color: #222;
+  color: rgb(221, 220, 212);
+  border-color: #222;
+}
+
+.pagination > li > a:hover {
+  background-color: rgb(221, 220, 212);
+  color: #222;
+  border-color: #222;
+}
+
+.pagination > .active > li > a:hover {
+  background-color: rgb(221, 220, 212);
+  color: #222;
+  border-color: #222;
+}
+
+
+.pagination > .active > a {
+  background-color: rgb(221, 220, 212);
+  color: #222;
+  border-color: #222;
+}
+
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  border-color: #222;
 }
