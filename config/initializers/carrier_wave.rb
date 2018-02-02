@@ -1,12 +1,13 @@
 if Rails.env.production?
   CarrierWave.configure do |config|
+    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
-      # Configuration for Amazon S3
-      :provider              => 'AWS',
-      :aws_access_key_id     => ENV['AKIAIBWRYS44B7NTDZ4Q'],
-      :aws_secret_access_key => ENV['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']
-
+      provider:              'AWS',
+      aws_access_key_id:     'AKIAIBWRYS44B7NTDZ4Q',
+      aws_secret_access_key: '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',
+      region:                'us-east-2',
     }
-    config.fog_directory     =  ENV['meme-reviews']
-  end
-end
+
+    config.fog_directory  = 'meme-reviews'
+    config.fog_public     = false
+    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
