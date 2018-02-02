@@ -11,3 +11,5 @@ if Rails.env.production?
     config.fog_directory  = 'meme-reviews'
     config.fog_public     = false
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+  end
+end
