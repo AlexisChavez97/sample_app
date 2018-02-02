@@ -23,6 +23,8 @@ section {
 }
 
 textarea {
+  border-radius: 5px;
+  outline: none;
   resize: vertical;
 }
 
@@ -133,6 +135,11 @@ footer {
 }
 
 /* image */
+
+.posts .content img {
+  height: 320px;
+}
+
  .home-img img{
    display: block;
    margin-left: auto;

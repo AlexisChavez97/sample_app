@@ -11,6 +11,7 @@
           <%= @user.email %>
         </h2>
       </h1>
+      <span><%= pluralize(current_user.posts.count, 'post') %></span>
     </section>
   </aside>
     <div class="col-md-8">

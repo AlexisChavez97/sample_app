@@ -16,7 +16,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test 'content must be present' do
-    @post.content = ' '
+    @post.content = ''
     assert_not @post.valid?
   end
 
