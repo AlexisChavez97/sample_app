@@ -3,8 +3,8 @@ if Rails.env.production?
     config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider:              'AWS',
-      aws_access_key_id:     'AKIAJ2OXGKIOJVPKLYNA',
-      aws_secret_access_key: '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',
+      aws_access_key_id:     'AKIAJYZQJL45B6B3WCQA',
+      aws_secret_access_key: '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',
       region:                'us-east-2'
     }
 
