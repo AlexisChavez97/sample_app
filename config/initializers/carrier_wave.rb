@@ -5,7 +5,7 @@ if Rails.env.production?
       provider:              'AWS',
       aws_access_key_id:     'AKIAIBWRYS44B7NTDZ4Q',
       aws_secret_access_key: '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',
-      region:                'us-east-2',
+      region:                'us-east-2'
     }
 
     config.fog_directory  = 'meme-reviews'
