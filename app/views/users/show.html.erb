@@ -13,9 +13,13 @@
       </h1>
       <span><%= pluralize(current_user.posts.count, 'post') %></span>
     </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
   </aside>
     <div class="col-md-8">
-    <% if @user.posts.any? %>
+      <%= render 'shared/follow_form' if logged_in? %>
+      <% if @user.posts.any? %>
       <h3>meme related posts</h3>
       <ol class="posts">
         <%= render @posts %>
