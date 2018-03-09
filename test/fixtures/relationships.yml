@@ -1,1 +1,16 @@
-#empty
+
+one:
+  follower: juan
+  followed: alexis
+
+two:
+  follower: juan
+  followed: jaka
+
+three:
+  follower: alexis
+  followed: juan
+
+four:
+  follower: demen
+  followed: juan

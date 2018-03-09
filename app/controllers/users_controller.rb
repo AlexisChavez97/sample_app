@@ -56,14 +56,22 @@ class UsersController < ApplicationController
     @title = 'Following'
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
-    render 'users/show_follow'
+    if logged_in?
+      render 'users/show_follow'
+    else
+      redirect_to login_path
+    end
   end
 
   def followers
     @title = 'Followers'
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
-    render 'users/show_follow'
+    if logged_in?
+      render 'users/show_follow'
+    else
+      redirect_to login_path
+    end
   end
 
   private
