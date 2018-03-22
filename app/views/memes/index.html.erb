@@ -1,1 +1,20 @@
 <h1>This is the home for memes</h1>
+
+<div class="flex-center">
+  <%= link_to "Create a new meme", new_meme_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<div class="posts-wrapper row">
+  <% @memes.each do |meme| %>
+    <div class="post">
+      <div class="image center-block">
+        <%= image_tag meme.picture, class:'img-responsive' %>
+      </div>
+      <p class="caption">
+        <%= meme.caption %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
+

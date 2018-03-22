@@ -5,5 +5,5 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validates :content, length: { maximum: 140 }
   validates :picture, presence: true, if: Proc.new { |post| post.content.blank? }
-  validates :content, presence: true, if: Proc.new { |post| post.picture.blank? }
+  validates :content, presence: true, unless: Proc.new { |post| post.picture.attached? }
 end
