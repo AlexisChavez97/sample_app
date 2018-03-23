@@ -12,6 +12,15 @@
       </div>
       <p class="caption">
         <%= meme.caption %>
+        <% if current_user.admin? %>
+        | <%= link_to "Delete", meme, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+        <% end %>
+        <br>
+        <span class="user">Meme added by: <%=  link_to meme.user.name,
+                                               meme.user %></span>
+        <br>
+        <%= link_to 'I wanna know more please', meme  %>
       </p>
     </div>
   <% end %>

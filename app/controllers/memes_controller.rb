@@ -1,5 +1,5 @@
 class MemesController < ApplicationController
-  before_action :logged_in_user, only: [:create]
+  before_action :logged_in_user, only: [:create, :new]
 
   def index
     @memes = Meme.all || []
@@ -9,6 +9,10 @@ class MemesController < ApplicationController
     @meme = Meme.new
   end
 
+  def show
+    @meme = Meme.find_by(params[:id])
+  end
+
   def create
     @meme = current_user.memes.build(meme_params)
     if @meme.save
@@ -16,6 +20,27 @@ class MemesController < ApplicationController
       redirect_to memes_path
     else
       render 'memes/new'
+    end
+  end
+
+  def edit
+    @meme = Meme.find_by(params[:id])
+  end
+
+  def update
+    @meme = Meme.find_by(params[:id])
+    if @meme.update_attributes(meme_params)
+      flash[:success] = 'Meme updated'
+      redirect_to
+  end
+end
+
+  def destroy
+    @meme = Meme.find_by(params[:id])
+    @meme.destroy
+    if @meme.destroy
+      flash[:success] = 'Deleted succesfully'
+      redirect_to memes_path
     end
   end
 
