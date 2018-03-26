@@ -11,16 +11,22 @@
         <%= image_tag meme.picture, class:'img-responsive' %>
       </div>
       <p class="caption">
+        <span class="name"><%= meme.name %></span>
+        <br>
+        <br>
         <%= meme.caption %>
+        <br>
+        <%= link_to 'I wanna know more please', meme  %>
+        <br>
         <% if current_user.admin? %>
-        | <%= link_to "Delete", meme, method: :delete,
+        <%= link_to "Delete", meme, method: :delete,
                                   data: { confirm: "You sure?" } %>
+
         <% end %>
+        <br>
         <br>
         <span class="user">Meme added by: <%=  link_to meme.user.name,
                                                meme.user %></span>
-        <br>
-        <%= link_to 'I wanna know more please', meme  %>
       </p>
     </div>
   <% end %>

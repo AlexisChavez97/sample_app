@@ -5,6 +5,9 @@
   <%= form_for(@meme) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
+      <%= f.text_area :name, placeholder: "Here goes the name" %>
+    </div>
+    <div class="field">
       <%= f.text_area :caption, placeholder: "Here goes the caption" %>
     </div>
     <span class='picture'>

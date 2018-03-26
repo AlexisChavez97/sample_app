@@ -10,7 +10,7 @@ class MemesController < ApplicationController
   end
 
   def show
-    @meme = Meme.find_by(params[:id])
+    @meme = Meme.find(params[:id])
   end
 
   def create
@@ -24,20 +24,19 @@ class MemesController < ApplicationController
   end
 
   def edit
-    @meme = Meme.find_by(params[:id])
+    @meme = Meme.find(params[:id])
   end
 
   def update
-    @meme = Meme.find_by(params[:id])
+    @meme = Meme.find(params[:id])
     if @meme.update_attributes(meme_params)
       flash[:success] = 'Meme updated'
-      redirect_to
+      redirect_to @meme
+    end
   end
-end
 
   def destroy
-    @meme = Meme.find_by(params[:id])
-    @meme.destroy
+    @meme = Meme.find(params[:id])
     if @meme.destroy
       flash[:success] = 'Deleted succesfully'
       redirect_to memes_path
@@ -47,6 +46,6 @@ end
   private
 
   def meme_params
-    params.require(:meme).permit(:picture, :caption)
+    params.require(:meme).permit(:picture, :caption, :name)
   end
 end

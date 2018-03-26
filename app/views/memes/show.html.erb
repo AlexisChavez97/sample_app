@@ -1,6 +1,5 @@
-<h1>Take a better look</h1>
-
 <div class="posts-wrapper row">
+<span class="title"><%= @meme.name %></span>
     <div class="post">
       <div class="image center-block">
         <%= image_tag @meme.picture, class:'img-responsive' %>
@@ -8,13 +7,14 @@
       <p class="caption">
       <h2>About</h2>
         <%= @meme.caption %>
-        <% if current_user.admin? %>
-        | <%= link_to "Delete", @meme, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-        <% end %>
         <br>
         <span class="user">Meme added by: <%=  link_to @meme.user.name,
                                                @meme.user %></span>
+        <br>
+        <% if current_user.admin? %>
+        <%= link_to "Delete", @meme, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+        <% end %>
       </p>
     </div>
 </div>
