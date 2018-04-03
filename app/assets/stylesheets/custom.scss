@@ -445,10 +445,25 @@ img {
 }
 
 .caption {
+  text-align: center;
   padding: 24px 24px;
   font-size: 15px;
   line-height: 18px;
+}
 
+.post p {
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.post h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $light-gray;
 }
 
 .form-wrapper {
@@ -473,7 +488,7 @@ span.title {
 }
 
 span.name {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;

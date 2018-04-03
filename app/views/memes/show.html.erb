@@ -1,20 +1,22 @@
 <div class="posts-wrapper row">
 <span class="title"><%= @meme.name %></span>
-    <div class="post">
-      <div class="image center-block">
-        <%= image_tag @meme.picture, class:'img-responsive' %>
-      </div>
-      <p class="caption">
-      <h2>About</h2>
-        <%= @meme.caption %>
-        <br>
-        <span class="user">Meme added by: <%=  link_to @meme.user.name,
-                                               @meme.user %></span>
-        <br>
-        <% if current_user.admin? %>
-        <%= link_to "Delete", @meme, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-        <% end %>
-      </p>
+  <div class="post show">
+    <div class="image center-block">
+      <%= image_tag @meme.picture, class:'img-responsive' %>
     </div>
+    <h2>About</h2>
+    <p>
+      <%= @meme.caption %>
+      <br>
+      <br>
+      <span class="user">Meme added by: <%=  link_to @meme.user.name,
+                                               @meme.user %></span>
+      <br>
+      <% if current_user.admin? %>
+      <%= link_to "Delete", @meme, method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_meme_path(@meme), class: "btn btn-primary" %>
+      <% end %>
+    </p>
+  </div>
 </div>
