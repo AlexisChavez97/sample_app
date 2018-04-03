@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+  resources :category
   resources :memes
   resources :users
   resources :posts,          only: [:create, :destroy]

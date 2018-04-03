@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.2'
 
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.8'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bcrypt'
@@ -72,7 +72,7 @@ end
 
 group :production do
   gem 'pg'
-  gem 'fog'
+  gem 'aws-sdk-s3', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

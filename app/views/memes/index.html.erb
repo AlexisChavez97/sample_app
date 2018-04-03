@@ -8,6 +8,7 @@
   <% @memes.each do |meme| %>
     <div class="post">
       <div class="image center-block">
+        <span class="title"><%= meme.name %></span>
         <%= image_tag meme.picture, class:'img-responsive' %>
       </div>
       <p class="caption">
@@ -16,17 +17,17 @@
         <br>
         <%= meme.caption %>
         <br>
-        <%= link_to 'I wanna know more please', meme  %>
-        <br>
-        <% if current_user.admin? %>
-        <%= link_to "Delete", meme, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-
-        <% end %>
+        <%= link_to 'More about these meme', meme  %>
         <br>
         <br>
         <span class="user">Meme added by: <%=  link_to meme.user.name,
                                                meme.user %></span>
+        <br>
+        <% if current_user.admin? %>
+        <%= link_to "Delete", meme, method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-primary" %>
+
+        <% end %>
       </p>
     </div>
   <% end %>

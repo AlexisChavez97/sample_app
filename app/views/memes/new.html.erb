@@ -10,6 +10,7 @@
     <div class="field">
       <%= f.text_area :caption, placeholder: "Here goes the caption" %>
     </div>
+    <%= f.select :category
     <span class='picture'>
       <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
