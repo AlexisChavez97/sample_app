@@ -8,7 +8,6 @@ class Meme < ApplicationRecord
   validate :picture_present?
   validates :name, presence: true, length: { maximum: 30 }
 
-
   def picture_present?
     errors.add(:picture, "Can't be blank") unless picture.attached?
   end

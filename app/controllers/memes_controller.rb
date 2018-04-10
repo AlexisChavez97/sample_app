@@ -16,9 +16,7 @@ class MemesController < ApplicationController
 
   def create
     @meme = current_user.memes.build(meme_params)
-    categories_params.each do |category|
-      @meme.categories << Category.find_or_create_by(name: category)
-    end
+    # @meme.category_ids = params[:category_id]
     if @meme.save
       flash[:success] = 'Meme was succesfully added'
       redirect_to memes_path
@@ -51,13 +49,5 @@ class MemesController < ApplicationController
 
   def meme_params
     params.require(:meme).permit(:picture, :caption, :name)
-  end
-
-  def categories_params
-    params.require(:categories)
-  end
-
-  def random_color
-    '%06x' % (rand * 0xffffff)
   end
 end
