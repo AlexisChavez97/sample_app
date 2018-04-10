@@ -1,6 +1,6 @@
 class Meme < ApplicationRecord
   belongs_to :user
-  has_many :categories
+  has_and_belongs_to_many :categories
   has_one_attached :picture
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_27_043701) do
+ActiveRecord::Schema.define(version: 2018_04_09_191658) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2018_03_27_043701) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "name"
-    t.integer "category", default: 0, null: false
     t.index ["user_id", "created_at"], name: "index_memes_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_memes_on_user_id"
   end

@@ -29,6 +29,9 @@
 
         <% end %>
       </p>
+      <% meme.categories.each do |category| %>
+        <span class="category">#<%= category.name %></span>
+      <% end %>
     </div>
   <% end %>
 </div>
